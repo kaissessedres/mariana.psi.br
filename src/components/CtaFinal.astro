@@ -1,4 +1,6 @@
 ---
+import Blob from './Blob.astro';
+
 const WA_LINK = `https://wa.me/818058508505?text=${encodeURIComponent('Olá, Mariana! Vim pelo site e gostaria de agendar uma conversa.')}`;
 ---
 
@@ -10,14 +12,12 @@ const WA_LINK = `https://wa.me/818058508505?text=${encodeURIComponent('Olá, Mar
     </svg>
   </div>
 
-  <div class="container cta-final__inner">
-    <!-- Blob decorativo -->
-    <div class="cta-final__blob" aria-hidden="true">
-      <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-        <path d="M250,30 C370,30 460,110 470,220 C480,330 400,390 280,400 C160,410 60,340 40,230 C20,120 90,40 180,25 C203,21 227,30 250,30Z" fill="white" opacity="0.08"/>
-      </svg>
-    </div>
+  <!-- Blobs orgânicos (consistentes com o resto da página) -->
+  <Blob cor="#ffffff" variante={1} size="380px" top="12%" right="6%" opacity={0.06} duration="17s" />
+  <Blob cor="var(--cor-verde-claro)" variante={3} size="200px" bottom="14%" right="20%" opacity={0.1} delay="2s" duration="14s" />
+  <Blob cor="#ffffff" variante={2} size="160px" top="24%" right="-30px" opacity={0.05} delay="1s" duration="15s" />
 
+  <div class="container cta-final__inner">
     <div class="cta-final__conteudo reveal">
       <p class="cta-final__pre">Próximo passo</p>
       <h2 class="cta-final__titulo">Mas então, do que o meu filho(a) precisa?</h2>
@@ -35,17 +35,6 @@ const WA_LINK = `https://wa.me/818058508505?text=${encodeURIComponent('Olá, Mar
           ou envie um e-mail →
         </a>
       </div>
-    </div>
-
-    <!-- Elementos decorativos -->
-    <div class="cta-final__decoracao" aria-hidden="true">
-      <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" width="280">
-        <circle cx="160" cy="160" r="130" fill="white" opacity="0.06"/>
-        <circle cx="160" cy="160" r="90" fill="white" opacity="0.06"/>
-        <circle cx="80" cy="80" r="30" fill="white" opacity="0.1"/>
-        <circle cx="260" cy="220" r="22" fill="white" opacity="0.1"/>
-        <path d="M160,60 C210,60 250,95 260,145 C270,195 245,240 200,255 C155,270 105,245 85,200 C65,155 85,100 120,75 C133,65 146,60 160,60Z" fill="white" opacity="0.05"/>
-      </svg>
     </div>
   </div>
 </section>
@@ -71,22 +60,7 @@ const WA_LINK = `https://wa.me/818058508505?text=${encodeURIComponent('Olá, Mar
     width: 100%;
   }
 
-  .cta-final__blob {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-
-  .cta-final__blob svg {
-    width: 100%;
-    height: 100%;
-  }
-
   .cta-final__inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: var(--espacamento-lg);
-    align-items: center;
     position: relative;
     z-index: 1;
   }
@@ -95,6 +69,7 @@ const WA_LINK = `https://wa.me/818058508505?text=${encodeURIComponent('Olá, Mar
     display: flex;
     flex-direction: column;
     gap: var(--espacamento-sm);
+    max-width: 760px;
   }
 
   .cta-final__pre {
@@ -149,14 +124,13 @@ const WA_LINK = `https://wa.me/818058508505?text=${encodeURIComponent('Olá, Mar
     color: #fff;
   }
 
-  .cta-final__decoracao {
-    flex-shrink: 0;
-  }
-
   @media (max-width: 768px) {
     .cta-final__inner {
-      grid-template-columns: 1fr;
       text-align: center;
+    }
+
+    .cta-final__conteudo {
+      align-items: center;
     }
 
     .cta-final__texto {
@@ -166,10 +140,6 @@ const WA_LINK = `https://wa.me/818058508505?text=${encodeURIComponent('Olá, Mar
     .cta-final__acoes {
       justify-content: center;
       flex-direction: column;
-    }
-
-    .cta-final__decoracao {
-      display: none;
     }
   }
 </style>
