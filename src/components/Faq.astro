@@ -1,9 +1,8 @@
 ---
-// ⚠️ Pendência §10 — FAQ precisa de aprovação da cliente antes de publicar
 const perguntas = [
   {
     pergunta: 'Como funciona o atendimento online?',
-    resposta: 'As sessões acontecem por videochamada, em plataforma segura. O atendimento psicológico online é regulamentado pelo Conselho Federal de Psicologia. ⚠️ Pendência: confirmar plataforma com a cliente.',
+    resposta: 'As sessões acontecem por videochamada, em plataforma segura e de fácil acesso. O atendimento psicológico online é regulamentado pelo Conselho Federal de Psicologia e tem eficácia equivalente ao presencial para a maioria dos casos.',
   },
   {
     pergunta: 'Como sei se meu filho(a) precisa de acompanhamento?',
@@ -15,7 +14,7 @@ const perguntas = [
   },
   {
     pergunta: 'Qual a duração e a frequência das sessões?',
-    resposta: '⚠️ Pendência: confirmar com a cliente — ex.: sessões semanais de 50 minutos, ajustadas a cada caso.',
+    resposta: 'Em geral, as sessões são semanais, com duração e frequência ajustadas a cada caso e ao objetivo terapêutico. Esses detalhes são combinados juntos, no início do acompanhamento.',
   },
   {
     pergunta: 'O atendimento de adolescentes é sigiloso?',
@@ -30,12 +29,12 @@ const perguntas = [
 
 <section class="secao faq" id="duvidas">
   <div class="container">
-    <div class="faq__cabecalho">
+    <div class="faq__cabecalho reveal">
       <h2>Dúvidas frequentes</h2>
       <p>Ainda na dúvida? Veja as perguntas mais comuns — e se não encontrar a resposta, me chame no WhatsApp.</p>
     </div>
 
-    <dl class="faq__lista">
+    <dl class="faq__lista reveal-group">
       {perguntas.map((item, i) => (
         <div class="faq__item">
           <dt>

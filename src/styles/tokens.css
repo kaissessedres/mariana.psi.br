@@ -170,3 +170,128 @@ p {
   color: var(--cor-verde-escuro);
   border: 2px solid var(--cor-verde-escuro);
 }
+
+/* ============================================================
+   ANIMAÇÕES & MICRO-INTERAÇÕES
+   ============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* --- Scroll reveal (fade-up) --- */
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 0.7, 0.2, 1),
+                transform 0.7s cubic-bezier(0.22, 0.7, 0.2, 1);
+    will-change: opacity, transform;
+  }
+
+  html.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Reveal com stagger para grupos (cards de uma seção) */
+  html.js .reveal-group > * {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.22, 0.7, 0.2, 1),
+                transform 0.6s cubic-bezier(0.22, 0.7, 0.2, 1);
+  }
+
+  html.js .reveal-group.is-visible > * {
+    opacity: 1;
+    transform: none;
+  }
+
+  html.js .reveal-group.is-visible > *:nth-child(2) { transition-delay: 0.09s; }
+  html.js .reveal-group.is-visible > *:nth-child(3) { transition-delay: 0.18s; }
+  html.js .reveal-group.is-visible > *:nth-child(4) { transition-delay: 0.27s; }
+  html.js .reveal-group.is-visible > *:nth-child(5) { transition-delay: 0.36s; }
+  html.js .reveal-group.is-visible > *:nth-child(6) { transition-delay: 0.45s; }
+
+  /* --- Entrada do Hero (no load) --- */
+  html.js .hero__conteudo > * {
+    opacity: 0;
+    animation: heroIn 0.8s cubic-bezier(0.22, 0.7, 0.2, 1) forwards;
+  }
+  html.js .hero__conteudo > *:nth-child(1) { animation-delay: 0.05s; }
+  html.js .hero__conteudo > *:nth-child(2) { animation-delay: 0.15s; }
+  html.js .hero__conteudo > *:nth-child(3) { animation-delay: 0.25s; }
+  html.js .hero__conteudo > *:nth-child(4) { animation-delay: 0.35s; }
+
+  html.js .hero__visual {
+    opacity: 0;
+    animation: heroFotoIn 1s cubic-bezier(0.22, 0.7, 0.2, 1) 0.2s forwards;
+  }
+
+  @keyframes heroIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  @keyframes heroFotoIn {
+    from { opacity: 0; transform: scale(0.92) translateY(16px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* --- Blobs flutuando suavemente --- */
+  .hero__blob { animation: float 9s ease-in-out infinite; }
+  .hero__blob--2 { animation: float 11s ease-in-out infinite reverse; }
+  .hero__foto-blob { animation: floatScale 8s ease-in-out infinite; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-16px); }
+  }
+
+  @keyframes floatScale {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50%      { transform: scale(1.03) rotate(1.5deg); }
+  }
+
+  /* --- Botão WhatsApp flutuante: anel pulsante --- */
+  .botao-whatsapp {
+    animation: pulseRing 2.6s ease-out infinite;
+  }
+
+  .botao-whatsapp:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes pulseRing {
+    0% {
+      box-shadow: 0 4px 20px rgba(199, 102, 121, 0.45),
+                  0 0 0 0 rgba(199, 102, 121, 0.5);
+    }
+    70% {
+      box-shadow: 0 4px 20px rgba(199, 102, 121, 0.45),
+                  0 0 0 18px rgba(199, 102, 121, 0);
+    }
+    100% {
+      box-shadow: 0 4px 20px rgba(199, 102, 121, 0.45),
+                  0 0 0 0 rgba(199, 102, 121, 0);
+    }
+  }
+}
+
+/* Underline animado nos links da navegação */
+.header__nav-list a {
+  position: relative;
+}
+
+.header__nav-list a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cor-rosa);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+}
+
+.header__nav-list a:hover::after {
+  transform: scaleX(1);
+}

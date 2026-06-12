@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Fundo orgânico -->
-  <path d="M24,4 C34,4 42,12 43,22 C44,32 38,40 28,43 C18,46 8,40 5,30 C2,20 8,9 18,5 C20,4 22,4 24,4Z" fill="#4e6f4c"/>
-  <!-- Letra M estilizada -->
-  <path d="M13,32 L13,16 L19,26 L24,19 L29,26 L35,16 L35,32" stroke="#fdfbf7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-</svg>

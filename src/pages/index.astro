@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Sobre from '../components/Sobre.astro';
 import Atendimentos from '../components/Atendimentos.astro';
+import ComoFunciona from '../components/ComoFunciona.astro';
 import Faq from '../components/Faq.astro';
 import BlogPreview from '../components/BlogPreview.astro';
 import CtaFinal from '../components/CtaFinal.astro';
@@ -23,6 +24,7 @@ const posts = (await getCollection('blog'))
     <Hero />
     <Sobre />
     <Atendimentos />
+    <ComoFunciona />
     <Faq />
     <BlogPreview posts={posts} />
     <CtaFinal />

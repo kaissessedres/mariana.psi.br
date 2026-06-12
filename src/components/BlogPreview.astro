@@ -25,13 +25,13 @@ function formatarData(date: Date) {
 {posts.length > 0 && (
   <section class="secao blog-preview" id="blog">
     <div class="container">
-      <div class="blog-preview__cabecalho">
+      <div class="blog-preview__cabecalho reveal">
         <h2>Do blog</h2>
         <p>Conteúdo sobre saúde mental infantojuvenil, dicas para pais e muito mais.</p>
         <a href="/blog" class="blog-preview__ver-todos">Ver todos os artigos →</a>
       </div>
 
-      <ul class="blog-preview__grid">
+      <ul class="blog-preview__grid reveal-group">
         {posts.map(post => (
           <li class="post-card">
             <a href={`/blog/${post.slug}`} class="post-card__link" aria-label={`Ler: ${post.data.title}`}>

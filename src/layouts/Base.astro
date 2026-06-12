@@ -10,7 +10,7 @@ interface Props {
 const {
   title = 'Mariana Gouvêa · Psicóloga Infantojuvenil Online — CRP 07/41781',
   description = 'Psicoterapia online para adolescentes, grupos terapêuticos e orientação parental com base na Terapia Cognitivo-Comportamental (TCC). Atendimento em todo o Brasil. Agende pelo WhatsApp.',
-  ogImage = '/og-image.png',
+  ogImage = '/og-image.jpg',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -22,6 +22,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href={canonicalURL} />
+    <script is:inline>
+      // Marca que o JS está ativo (habilita animações sem flash quando JS off)
+      document.documentElement.classList.add('js');
+    </script>
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -42,8 +46,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
@@ -63,5 +68,28 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <slot />
+
+    <script>
+      // Scroll reveal — anima elementos ao entrarem na viewport
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const alvos = document.querySelectorAll('.reveal, .reveal-group');
+
+      if (prefersReduced || !('IntersectionObserver' in window)) {
+        alvos.forEach((el) => el.classList.add('is-visible'));
+      } else {
+        const obs = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: '0px 0px -10% 0px', threshold: 0.12 }
+        );
+        alvos.forEach((el) => obs.observe(el));
+      }
+    </script>
   </body>
 </html>

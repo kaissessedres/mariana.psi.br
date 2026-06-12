@@ -32,12 +32,12 @@ const atendimentos = [
 
 <section class="secao atendimentos" id="atendimentos">
   <div class="container">
-    <div class="atendimentos__cabecalho">
+    <div class="atendimentos__cabecalho reveal">
       <h2>Atendimentos</h2>
       <p>Todos os atendimentos são realizados online, com segurança e acolhimento.</p>
     </div>
 
-    <ul class="atendimentos__grid">
+    <ul class="atendimentos__grid reveal-group">
       {atendimentos.map(a => (
         <li class={`card card--${a.cor}`}>
           <div class="card__foto-wrapper">
