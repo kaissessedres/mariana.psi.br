@@ -17,13 +17,17 @@ interface Props {
 
 const { posts } = Astro.props;
 
+import Blob from './Blob.astro';
+
 function formatarData(date: Date) {
   return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
 }
 ---
 
 {posts.length > 0 && (
-  <section class="secao blog-preview" id="blog">
+  <section class="secao blog-preview tem-blob" id="blog">
+    <Blob cor="var(--cor-verde-claro)" variante={2} size="300px" top="-70px" left="-80px" opacity={0.22} duration="14s" />
+    <Blob cor="var(--cor-rosa)" variante={3} size="220px" bottom="-50px" right="-50px" opacity={0.08} delay="1s" duration="12s" />
     <div class="container">
       <div class="blog-preview__cabecalho reveal">
         <h2>Do blog</h2>
@@ -123,6 +127,7 @@ function formatarData(date: Date) {
 
   .post-card__foto {
     overflow: hidden;
+    border-radius: var(--raio-lg) var(--raio-lg) 0 0;
   }
 
   .post-card__foto img {

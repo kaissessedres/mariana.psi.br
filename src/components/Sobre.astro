@@ -1,7 +1,10 @@
 ---
+import Blob from './Blob.astro';
 ---
 
-<section class="secao sobre" id="sobre">
+<section class="secao sobre tem-blob" id="sobre">
+  <Blob cor="var(--cor-rosa)" variante={1} size="240px" top="-50px" right="-50px" opacity={0.1} duration="13s" />
+  <Blob cor="var(--cor-verde-claro)" variante={3} size="300px" bottom="-90px" right="6%" opacity={0.18} delay="1.2s" duration="16s" />
   <div class="container sobre__inner">
     <div class="sobre__foto-wrapper reveal">
       <div class="sobre__foto-blob" aria-hidden="true"></div>

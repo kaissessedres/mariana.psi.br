@@ -1,0 +1,52 @@
+---
+interface Props {
+  cor?: string;
+  size?: string;
+  top?: string;
+  left?: string;
+  right?: string;
+  bottom?: string;
+  opacity?: number;
+  delay?: string;
+  duration?: string;
+  variante?: 1 | 2 | 3;
+}
+
+const {
+  cor = 'var(--cor-verde-claro)',
+  size = '280px',
+  top,
+  left,
+  right,
+  bottom,
+  opacity = 0.35,
+  delay = '0s',
+  duration = '11s',
+  variante = 1,
+} = Astro.props;
+
+const paths: Record<number, string> = {
+  1: 'M100,30 C130,30 165,45 175,80 C185,115 170,150 140,168 C110,186 70,182 45,160 C20,138 18,95 30,68 C42,41 70,30 100,30 Z',
+  2: 'M105,25 C140,28 172,55 174,92 C176,129 150,160 115,170 C80,180 40,168 25,135 C10,102 22,60 52,40 C72,27 88,23 105,25 Z',
+  3: 'M100,28 C140,30 172,62 170,102 C168,140 138,172 100,172 C60,172 30,138 30,98 C30,60 62,26 100,28 Z',
+};
+
+const estilo = [
+  top !== undefined && `top:${top}`,
+  left !== undefined && `left:${left}`,
+  right !== undefined && `right:${right}`,
+  bottom !== undefined && `bottom:${bottom}`,
+  `width:${size}`,
+  `opacity:${opacity}`,
+  `--blob-delay:${delay}`,
+  `--blob-duration:${duration}`,
+]
+  .filter(Boolean)
+  .join(';');
+---
+
+<div class="blob-decor" style={estilo} aria-hidden="true">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d={paths[variante]} fill={cor} />
+  </svg>
+</div>

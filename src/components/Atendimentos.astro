@@ -28,9 +28,13 @@ const atendimentos = [
     cor: 'laranja',
   },
 ];
+
+import Blob from './Blob.astro';
 ---
 
-<section class="secao atendimentos" id="atendimentos">
+<section class="secao atendimentos tem-blob" id="atendimentos">
+  <Blob cor="var(--cor-laranja)" variante={2} size="340px" top="-90px" right="-70px" opacity={0.1} duration="12s" />
+  <Blob cor="var(--cor-verde-claro)" variante={1} size="280px" bottom="-80px" left="-60px" opacity={0.22} delay="1.5s" duration="14s" />
   <div class="container">
     <div class="atendimentos__cabecalho reveal">
       <h2>Atendimentos</h2>

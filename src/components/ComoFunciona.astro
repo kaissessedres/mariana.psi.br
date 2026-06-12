@@ -1,4 +1,6 @@
 ---
+import Blob from './Blob.astro';
+
 const WA_LINK = `https://wa.me/818058508505?text=${encodeURIComponent('Olá, Mariana! Vim pelo site e gostaria de agendar uma conversa.')}`;
 
 const passos = [
@@ -33,7 +35,9 @@ const passos = [
 ];
 ---
 
-<section class="secao como-funciona" id="como-funciona">
+<section class="secao como-funciona tem-blob" id="como-funciona">
+  <Blob cor="var(--cor-rosa)" variante={3} size="300px" top="-60px" left="-80px" opacity={0.1} duration="13s" />
+  <Blob cor="var(--cor-verde-claro)" variante={2} size="260px" bottom="-70px" right="-60px" opacity={0.2} delay="2s" duration="15s" />
   <div class="container">
     <div class="como-funciona__cabecalho reveal">
       <h2>Como funciona</h2>

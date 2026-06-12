@@ -25,9 +25,12 @@ const perguntas = [
     resposta: 'Entre em contato pelo WhatsApp para conversarmos sobre valores e disponibilidade de horários.',
   },
 ];
+
+import Blob from './Blob.astro';
 ---
 
-<section class="secao faq" id="duvidas">
+<section class="secao faq tem-blob" id="duvidas">
+  <Blob cor="var(--cor-verde-claro)" variante={1} size="320px" top="-60px" right="-90px" opacity={0.3} duration="13s" />
   <div class="container">
     <div class="faq__cabecalho reveal">
       <h2>Dúvidas frequentes</h2>
