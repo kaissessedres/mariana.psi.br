@@ -1,20 +1,21 @@
 ---
+import { Image } from 'astro:assets';
+import fotoSobre from '../assets/fotos/sobre.jpg';
 ---
 
 <section class="secao sobre" id="sobre">
   <div class="container sobre__inner">
-    <div class="sobre__decoracao" aria-hidden="true">
-      <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" width="260">
-        <path d="M140,20 C200,20 255,70 265,135 C275,200 240,255 180,270 C120,285 60,250 35,190 C10,130 35,65 90,35 C108,25 124,20 140,20Z" fill="var(--cor-verde-claro)" opacity="0.5"/>
-        <circle cx="140" cy="130" r="80" fill="var(--cor-verde-escuro)" opacity="0.08"/>
-        <!-- Pessoa estilizada -->
-        <circle cx="140" cy="100" r="32" fill="var(--cor-verde-escuro)" opacity="0.25"/>
-        <path d="M90,180 Q140,210 190,180 L190,200 Q140,230 90,200Z" fill="var(--cor-verde-escuro)" opacity="0.25"/>
-        <!-- Detalhes decorativos -->
-        <circle cx="230" cy="55" r="16" fill="var(--cor-rosa)" opacity="0.5"/>
-        <circle cx="45" cy="210" r="12" fill="var(--cor-laranja)" opacity="0.45"/>
-        <circle cx="210" cy="225" r="10" fill="var(--cor-verde-claro)" opacity="0.8"/>
-      </svg>
+    <div class="sobre__foto-wrapper">
+      <div class="sobre__foto-blob" aria-hidden="true"></div>
+      <Image
+        src={fotoSobre}
+        alt="Mariana Gouvêa segurando bonecos do Divertidamente — representando as emoções no trabalho terapêutico"
+        width={420}
+        height={460}
+        quality={82}
+        class="sobre__foto"
+        loading="lazy"
+      />
     </div>
 
     <div class="sobre__conteudo">
@@ -97,8 +98,30 @@
     align-items: center;
   }
 
-  .sobre__decoracao {
+  /* Foto */
+  .sobre__foto-wrapper {
+    position: relative;
     flex-shrink: 0;
+  }
+
+  .sobre__foto-blob {
+    position: absolute;
+    inset: -20px -16px -16px -20px;
+    border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+    background: linear-gradient(135deg, var(--cor-verde-claro) 0%, rgba(193,209,138,0.35) 100%);
+    z-index: 0;
+  }
+
+  .sobre__foto {
+    position: relative;
+    z-index: 1;
+    border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+    width: 380px;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+    display: block;
+    box-shadow: 0 20px 50px rgba(78, 111, 76, 0.18);
   }
 
   .sobre__titulo {
@@ -160,19 +183,25 @@
     line-height: 1.4;
   }
 
+  @media (max-width: 1024px) {
+    .sobre__foto {
+      width: 300px;
+    }
+  }
+
   @media (max-width: 900px) {
     .sobre__inner {
       grid-template-columns: 1fr;
       text-align: center;
     }
 
-    .sobre__decoracao {
+    .sobre__foto-wrapper {
       display: flex;
       justify-content: center;
     }
 
-    .sobre__decoracao svg {
-      width: 180px;
+    .sobre__foto {
+      width: 260px;
     }
 
     .sobre__texto p {

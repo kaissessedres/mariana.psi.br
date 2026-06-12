@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import fotoHero from '../assets/fotos/hero.jpg';
+
 const WA_LINK = `https://wa.me/{{WHATSAPP}}?text=${encodeURIComponent('Olá, Mariana! Vim pelo site e gostaria de agendar uma conversa.')}`;
 ---
 
 <section class="hero" id="inicio">
-  <!-- Forma decorativa de fundo -->
   <div class="hero__blob" aria-hidden="true">
     <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
       <path d="M300,50 C420,50 530,140 550,260 C570,380 490,490 370,530 C250,570 130,500 80,390 C30,280 70,140 160,90 C210,65 255,50 300,50Z" fill="var(--cor-verde-claro)" opacity="0.4"/>
@@ -21,7 +23,6 @@ const WA_LINK = `https://wa.me/{{WHATSAPP}}?text=${encodeURIComponent('Olá, Mar
       <h1 class="hero__titulo">Mariana Gouvêa</h1>
       <p class="hero__frase-valor">
         Cuidando da saúde mental de crianças e adolescentes, onde quer que vocês estejam — atendimento 100% online.
-        <!-- ⚠️ Pendência §10: aprovar frase de valor com a cliente -->
       </p>
       <div class="hero__acoes">
         <a href={WA_LINK} class="btn btn--whatsapp hero__btn" target="_blank" rel="noopener noreferrer">
@@ -36,26 +37,22 @@ const WA_LINK = `https://wa.me/{{WHATSAPP}}?text=${encodeURIComponent('Olá, Mar
       </div>
     </div>
 
-    <!-- Composição gráfica (placeholder até chegarem as fotos) -->
-    <div class="hero__visual" aria-hidden="true">
-      <div class="hero__foto-placeholder">
-        <svg viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" width="300">
-          <!-- Forma orgânica de fundo -->
-          <path d="M150,20 C220,20 280,80 290,160 C300,240 260,310 190,340 C120,370 50,330 25,255 C0,180 30,90 90,50 C110,35 130,20 150,20Z" fill="var(--cor-verde-claro)" opacity="0.6"/>
-          <!-- Ícone centralizado -->
-          <circle cx="150" cy="160" r="70" fill="var(--cor-verde-escuro)" opacity="0.15"/>
-          <circle cx="150" cy="135" r="36" fill="var(--cor-verde-escuro)" opacity="0.3"/>
-          <path d="M85,220 Q150,260 215,220 L215,260 Q150,300 85,260Z" fill="var(--cor-verde-escuro)" opacity="0.3"/>
-          <!-- Elemento decorativo rosa -->
-          <circle cx="255" cy="80" r="22" fill="var(--cor-rosa)" opacity="0.5"/>
-          <circle cx="50" cy="270" r="16" fill="var(--cor-laranja)" opacity="0.4"/>
-        </svg>
-        <p class="hero__foto-legenda">Foto em breve</p>
+    <div class="hero__visual">
+      <div class="hero__foto-wrapper">
+        <div class="hero__foto-blob" aria-hidden="true"></div>
+        <Image
+          src={fotoHero}
+          alt="Mariana Gouvêa, psicóloga infantojuvenil, sentada em poltrona com xícara da marca e livros ao fundo"
+          width={520}
+          height={580}
+          quality={82}
+          class="hero__foto"
+          loading="eager"
+        />
       </div>
     </div>
   </div>
 
-  <!-- Onda decorativa -->
   <div class="hero__onda" aria-hidden="true">
     <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80Z" fill="var(--cor-fundo)"/>
@@ -141,25 +138,36 @@ const WA_LINK = `https://wa.me/{{WHATSAPP}}?text=${encodeURIComponent('Olá, Mar
     padding: 0.85rem 1.75rem;
   }
 
+  /* Foto */
   .hero__visual {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .hero__foto-placeholder {
+  .hero__foto-wrapper {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
   }
 
-  .hero__foto-legenda {
-    font-size: 0.8rem;
-    color: var(--cor-verde-escuro);
-    opacity: 0.5;
-    font-style: italic;
+  .hero__foto-blob {
+    position: absolute;
+    inset: -24px -20px -20px -20px;
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+    background: linear-gradient(135deg, var(--cor-verde-claro) 0%, rgba(193,209,138,0.4) 100%);
+    z-index: 0;
+  }
+
+  .hero__foto {
+    position: relative;
+    z-index: 1;
+    border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+    display: block;
+    box-shadow: 0 24px 60px rgba(78, 111, 76, 0.2);
   }
 
   .hero__onda {
@@ -174,7 +182,7 @@ const WA_LINK = `https://wa.me/{{WHATSAPP}}?text=${encodeURIComponent('Olá, Mar
     width: 100%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .hero {
       min-height: auto;
       padding-bottom: var(--espacamento-lg);
@@ -197,8 +205,9 @@ const WA_LINK = `https://wa.me/{{WHATSAPP}}?text=${encodeURIComponent('Olá, Mar
       order: -1;
     }
 
-    .hero__visual svg {
-      width: 200px;
+    .hero__foto {
+      max-width: 280px;
+      margin-inline: auto;
     }
   }
 </style>

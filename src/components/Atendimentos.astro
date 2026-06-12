@@ -1,6 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import fotoAdolescentes from '../assets/fotos/atend-adolescentes.jpg';
+import fotoGrupo from '../assets/fotos/atend-grupo.jpg';
+import fotoParental from '../assets/fotos/atend-parental.jpg';
+
 const atendimentos = [
   {
+    foto: fotoAdolescentes,
+    fotoAlt: 'Mariana e adolescente jogando UNO — representando a terapia com recursos lúdicos',
     icone: '🧑‍💻',
     titulo: 'Psicoterapia para Adolescentes',
     subtitulo: 'Online',
@@ -8,6 +15,8 @@ const atendimentos = [
     cor: 'verde',
   },
   {
+    foto: fotoGrupo,
+    fotoAlt: 'Mariana brincando com bolhas com duas crianças — representando o trabalho em grupo',
     icone: '👥',
     titulo: 'Grupo de Adolescentes',
     subtitulo: 'Online',
@@ -15,6 +24,8 @@ const atendimentos = [
     cor: 'rosa',
   },
   {
+    foto: fotoParental,
+    fotoAlt: 'Mariana interagindo com bebê em atividade lúdica — representando a orientação parental',
     icone: '🤝',
     titulo: 'Orientação Parental',
     subtitulo: 'Individual ou em grupo · Online',
@@ -34,11 +45,18 @@ const atendimentos = [
     <ul class="atendimentos__grid">
       {atendimentos.map(a => (
         <li class={`card card--${a.cor}`}>
-          <div class="card__icone" aria-hidden="true">{a.icone}</div>
-          <div class="card__cabecalho">
-            <h3 class="card__titulo">{a.titulo}</h3>
-            <span class="card__selo">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <div class="card__foto-wrapper">
+            <Image
+              src={a.foto}
+              alt={a.fotoAlt}
+              width={400}
+              height={240}
+              quality={80}
+              class="card__foto"
+              loading="lazy"
+            />
+            <span class={`card__selo card__selo--${a.cor}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="2" y="3" width="20" height="14" rx="2"/>
                 <line x1="8" y1="21" x2="16" y2="21"/>
                 <line x1="12" y1="17" x2="12" y2="21"/>
@@ -46,7 +64,10 @@ const atendimentos = [
               {a.subtitulo}
             </span>
           </div>
-          <p class="card__texto">{a.texto}</p>
+          <div class="card__conteudo">
+            <h3 class="card__titulo">{a.titulo}</h3>
+            <p class="card__texto">{a.texto}</p>
+          </div>
         </li>
       ))}
     </ul>
@@ -80,12 +101,10 @@ const atendimentos = [
   .card {
     background-color: #fff;
     border-radius: var(--raio-lg);
-    padding: var(--espacamento-md);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
     box-shadow: 0 4px 20px rgba(78, 111, 76, 0.08);
-    border-top: 4px solid transparent;
     transition: transform var(--transicao), box-shadow var(--transicao);
   }
 
@@ -94,67 +113,85 @@ const atendimentos = [
     box-shadow: 0 8px 32px rgba(78, 111, 76, 0.14);
   }
 
-  .card--verde {
-    border-top-color: var(--cor-verde-escuro);
+  /* Foto do card */
+  .card__foto-wrapper {
+    position: relative;
+    overflow: hidden;
   }
 
-  .card--rosa {
-    border-top-color: var(--cor-rosa);
+  .card__foto {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.4s ease;
   }
 
-  .card--laranja {
-    border-top-color: var(--cor-laranja);
+  .card:hover .card__foto {
+    transform: scale(1.04);
   }
 
-  .card__icone {
-    font-size: 2rem;
+  .card__selo {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.7rem;
+    border-radius: var(--raio-full);
+    backdrop-filter: blur(4px);
   }
 
-  .card__cabecalho {
+  .card__selo--verde {
+    color: var(--cor-verde-escuro);
+    background-color: rgba(193, 209, 138, 0.92);
+  }
+
+  .card__selo--rosa {
+    color: #fff;
+    background-color: rgba(199, 102, 121, 0.9);
+  }
+
+  .card__selo--laranja {
+    color: #fff;
+    background-color: rgba(206, 130, 54, 0.9);
+  }
+
+  .card__conteudo {
+    padding: var(--espacamento-md);
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.6rem;
+    flex: 1;
   }
 
   .card__titulo {
     color: var(--cor-verde-escuro);
-    font-size: 1.15rem;
-  }
-
-  .card__selo {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--cor-verde-escuro);
-    background-color: var(--cor-verde-claro);
-    padding: 0.2rem 0.6rem;
-    border-radius: var(--raio-full);
-    width: fit-content;
-  }
-
-  .card--rosa .card__selo {
-    color: #fff;
-    background-color: var(--cor-rosa);
-  }
-
-  .card--laranja .card__selo {
-    color: #fff;
-    background-color: var(--cor-laranja);
+    font-size: 1.1rem;
   }
 
   .card__texto {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     line-height: 1.75;
     color: var(--cor-texto);
     max-width: none;
     opacity: 0.85;
   }
 
+  /* Borda superior colorida */
+  .card--verde { border-top: 4px solid var(--cor-verde-escuro); }
+  .card--rosa  { border-top: 4px solid var(--cor-rosa); }
+  .card--laranja { border-top: 4px solid var(--cor-laranja); }
+
   @media (max-width: 900px) {
     .atendimentos__grid {
       grid-template-columns: 1fr;
+      max-width: 480px;
+      margin-inline: auto;
     }
   }
 </style>
