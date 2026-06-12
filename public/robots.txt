@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mariana.psi.br/sitemap-index.xml
+Sitemap: https://marianapsibr.vercel.app/sitemap-index.xml
