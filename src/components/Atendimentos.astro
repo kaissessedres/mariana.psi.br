@@ -1,12 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-import fotoAdolescentes from '../assets/fotos/atend-adolescentes.jpg';
-import fotoGrupo from '../assets/fotos/atend-grupo.jpg';
-import fotoParental from '../assets/fotos/atend-parental.jpg';
-
 const atendimentos = [
   {
-    foto: fotoAdolescentes,
+    foto: 'adolescentes',
     fotoAlt: 'Mariana e adolescente jogando UNO — representando a terapia com recursos lúdicos',
     icone: '🧑‍💻',
     titulo: 'Psicoterapia para Adolescentes',
@@ -15,7 +10,7 @@ const atendimentos = [
     cor: 'verde',
   },
   {
-    foto: fotoGrupo,
+    foto: 'grupo',
     fotoAlt: 'Mariana brincando com bolhas com duas crianças — representando o trabalho em grupo',
     icone: '👥',
     titulo: 'Grupo de Adolescentes',
@@ -24,7 +19,7 @@ const atendimentos = [
     cor: 'rosa',
   },
   {
-    foto: fotoParental,
+    foto: 'parental',
     fotoAlt: 'Mariana interagindo com bebê em atividade lúdica — representando a orientação parental',
     icone: '🤝',
     titulo: 'Orientação Parental',
@@ -46,12 +41,12 @@ const atendimentos = [
       {atendimentos.map(a => (
         <li class={`card card--${a.cor}`}>
           <div class="card__foto-wrapper">
-            <Image
-              src={a.foto}
+            <img
+              src={`/fotos-web/${a.foto}@1x.webp`}
+              srcset={`/fotos-web/${a.foto}@1x.webp 1x, /fotos-web/${a.foto}@2x.webp 2x`}
               alt={a.fotoAlt}
-              width={400}
-              height={240}
-              quality={80}
+              width={440}
+              height={293}
               class="card__foto"
               loading="lazy"
             />

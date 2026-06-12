@@ -1,7 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import fotoHero from '../assets/fotos/hero.jpg';
-
 const WA_LINK = `https://wa.me/{{WHATSAPP}}?text=${encodeURIComponent('Olá, Mariana! Vim pelo site e gostaria de agendar uma conversa.')}`;
 ---
 
@@ -40,14 +37,15 @@ const WA_LINK = `https://wa.me/{{WHATSAPP}}?text=${encodeURIComponent('Olá, Mar
     <div class="hero__visual">
       <div class="hero__foto-wrapper">
         <div class="hero__foto-blob" aria-hidden="true"></div>
-        <Image
-          src={fotoHero}
+        <img
+          src="/fotos-web/hero@1x.webp"
+          srcset="/fotos-web/hero@1x.webp 1x, /fotos-web/hero@2x.webp 2x"
           alt="Mariana Gouvêa, psicóloga infantojuvenil, sentada em poltrona com xícara da marca e livros ao fundo"
-          width={520}
-          height={580}
-          quality={82}
+          width={480}
+          height={600}
           class="hero__foto"
           loading="eager"
+          fetchpriority="high"
         />
       </div>
     </div>
