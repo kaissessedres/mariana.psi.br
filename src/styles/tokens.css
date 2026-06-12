@@ -58,6 +58,7 @@ body {
   background-color: var(--cor-fundo);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img, svg {
@@ -295,10 +296,11 @@ p {
   }
 }
 
-/* Seções que hospedam blobs: conteúdo sempre acima */
+/* Seções que hospedam blobs: conteúdo sempre acima.
+   Sem overflow:hidden — os blobs atravessam as divisas das seções.
+   O vazamento lateral é contido por overflow-x:clip no body. */
 .tem-blob {
   position: relative;
-  overflow: hidden;
 }
 
 .tem-blob > .container {
