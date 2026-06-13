@@ -5,5 +5,8 @@ dist/
 .env.*
 !.env.example
 public/fotos/
+# Fotos-fonte de alta resolução (originais do ensaio). Não vão pro build —
+# servem só para regerar os recortes em public/fotos-web. Fonte: Google Drive.
+src/assets/fotos/
 .vercel
 .claude/

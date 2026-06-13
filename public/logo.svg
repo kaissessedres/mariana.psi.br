@@ -1,9 +1,0 @@
-<!-- Logo placeholder — substituir pelo arquivo vetorial da pasta marca/ (versão jul/2024 com CRP) -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" fill="none">
-  <!-- Símbolo -->
-  <circle cx="28" cy="28" r="24" fill="#4e6f4c"/>
-  <path d="M17,38 L17,18 L24,30 L28,22 L32,30 L39,18 L39,38" stroke="#fdfbf7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <!-- Nome -->
-  <text x="60" y="22" font-family="Poppins, sans-serif" font-size="15" font-weight="700" fill="#4e6f4c">Mariana Gouvêa</text>
-  <text x="60" y="40" font-family="Poppins, sans-serif" font-size="10" font-weight="400" fill="#4e6f4c" opacity="0.7">Psicóloga infantojuvenil · CRP 07/41781</text>
-</svg>

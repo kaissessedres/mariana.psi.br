@@ -1,9 +1,0 @@
-<!-- Logo branco para o footer — substituir pelo arquivo oficial -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" fill="none">
-  <!-- Símbolo -->
-  <circle cx="28" cy="28" r="24" fill="rgba(255,255,255,0.15)"/>
-  <path d="M17,38 L17,18 L24,30 L28,22 L32,30 L39,18 L39,38" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <!-- Nome -->
-  <text x="60" y="22" font-family="Poppins, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Mariana Gouvêa</text>
-  <text x="60" y="40" font-family="Poppins, sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.7)">Psicóloga infantojuvenil · CRP 07/41781</text>
-</svg>
