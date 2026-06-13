@@ -47,12 +47,12 @@ Crie um arquivo `.md` em `src/content/blog/`:
 
 ```markdown
 ---
-title: "Título do post"
-description: "Resumo curto, usado na listagem e no SEO."
+title: 'Título do post'
+description: 'Resumo curto, usado na listagem e no SEO.'
 pubDate: 2026-01-15
-tags: ["Adolescentes", "Terapia Online"]
-heroImage: "/fotos-web/nome-da-imagem"   # opcional (sem o sufixo -capa/-card)
-heroImageAlt: "Descrição da imagem para acessibilidade"
+tags: ['Adolescentes', 'Terapia Online']
+heroImage: '/fotos-web/nome-da-imagem' # opcional (sem o sufixo -capa/-card)
+heroImageAlt: 'Descrição da imagem para acessibilidade'
 ---
 
 Conteúdo do post em Markdown...
@@ -64,12 +64,12 @@ O post aparece automaticamente na home (3 mais recentes) e na página `/blog`.
 
 Tokens centralizados em [`src/styles/tokens.css`](src/styles/tokens.css):
 
-| Cor | Hex | Uso |
-|-----|-----|-----|
+| Cor          | Hex       | Uso                                   |
+| ------------ | --------- | ------------------------------------- |
 | Verde escuro | `#4e6f4c` | títulos, links, elementos estruturais |
-| Verde claro | `#c1d18a` | fundos de seção, formas decorativas |
-| Rosa | `#c76679` | CTA do WhatsApp, destaques |
-| Laranja | `#ce8236` | acentos pontuais |
+| Verde claro  | `#c1d18a` | fundos de seção, formas decorativas   |
+| Rosa         | `#c76679` | CTA do WhatsApp, destaques            |
+| Laranja      | `#ce8236` | acentos pontuais                      |
 
 ## Deploy
 

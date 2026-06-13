@@ -5,11 +5,16 @@ import Footer from '../../components/Footer.astro';
 import BotaoWhatsApp from '../../components/BotaoWhatsApp.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 
 function formatarData(date: Date) {
-  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+  return date.toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  });
 }
 ---
 
@@ -23,48 +28,59 @@ function formatarData(date: Date) {
       <div class="container">
         <a href="/" class="blog-pagina__voltar">← Voltar ao site</a>
         <h1>Blog</h1>
-        <p>Conteúdo sobre saúde mental infantojuvenil para pais, cuidadores e adolescentes.</p>
+        <p>
+          Conteúdo sobre saúde mental infantojuvenil para pais, cuidadores e adolescentes.
+        </p>
       </div>
     </div>
 
     <div class="container blog-pagina__conteudo">
-      {posts.length === 0 ? (
-        <div class="blog-pagina__vazio">
-          <p>Em breve, novos artigos por aqui. Fique de olho!</p>
-          <a href="/" class="btn btn--outline">Voltar ao início</a>
-        </div>
-      ) : (
-        <ul class="blog-pagina__lista">
-          {posts.map(post => (
-            <li class="post-item">
-              <a href={`/blog/${post.slug}`} class="post-item__link">
-                {post.data.heroImage && (
-                  <div class="post-item__foto">
-                    <img
-                      src={`${post.data.heroImage}-card.webp`}
-                      alt={post.data.heroImageAlt ?? post.data.title}
-                      width={800}
-                      height={533}
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <div class="post-item__conteudo">
-                  {post.data.tags && post.data.tags.length > 0 && (
-                    <span class="post-item__tag">{post.data.tags[0]}</span>
+      {
+        posts.length === 0 ? (
+          <div class="blog-pagina__vazio">
+            <p>Em breve, novos artigos por aqui. Fique de olho!</p>
+            <a href="/" class="btn btn--outline">
+              Voltar ao início
+            </a>
+          </div>
+        ) : (
+          <ul class="blog-pagina__lista">
+            {posts.map((post) => (
+              <li class="post-item">
+                <a href={`/blog/${post.slug}`} class="post-item__link">
+                  {post.data.heroImage && (
+                    <div class="post-item__foto">
+                      <img
+                        src={`${post.data.heroImage}-card.webp`}
+                        alt={post.data.heroImageAlt ?? post.data.title}
+                        width={800}
+                        height={533}
+                        loading="lazy"
+                      />
+                    </div>
                   )}
-                  <h2 class="post-item__titulo">{post.data.title}</h2>
-                  <p class="post-item__descricao">{post.data.description}</p>
-                  <time class="post-item__data" datetime={post.data.pubDate.toISOString()}>
-                    {formatarData(post.data.pubDate)}
-                  </time>
-                </div>
-                <span class="post-item__seta" aria-hidden="true">→</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+                  <div class="post-item__conteudo">
+                    {post.data.tags && post.data.tags.length > 0 && (
+                      <span class="post-item__tag">{post.data.tags[0]}</span>
+                    )}
+                    <h2 class="post-item__titulo">{post.data.title}</h2>
+                    <p class="post-item__descricao">{post.data.description}</p>
+                    <time
+                      class="post-item__data"
+                      datetime={post.data.pubDate.toISOString()}
+                    >
+                      {formatarData(post.data.pubDate)}
+                    </time>
+                  </div>
+                  <span class="post-item__seta" aria-hidden="true">
+                    →
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
     </div>
   </main>
   <Footer />
@@ -131,7 +147,9 @@ function formatarData(date: Date) {
     border-radius: var(--raio-md);
     box-shadow: 0 2px 10px rgba(78, 111, 76, 0.06);
     overflow: hidden;
-    transition: transform var(--transicao), box-shadow var(--transicao);
+    transition:
+      transform var(--transicao),
+      box-shadow var(--transicao);
   }
 
   .post-item:hover {
@@ -210,7 +228,9 @@ function formatarData(date: Date) {
     flex-shrink: 0;
     align-self: center;
     padding-right: var(--espacamento-md);
-    transition: opacity var(--transicao), transform var(--transicao);
+    transition:
+      opacity var(--transicao),
+      transform var(--transicao);
   }
 
   .post-item:hover .post-item__seta {

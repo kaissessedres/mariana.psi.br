@@ -1,10 +1,10 @@
 ---
-title: "O que é orientação parental e quando ela ajuda?"
-description: "Educar não vem com manual. A orientação parental é um espaço de apoio para pais e cuidadores entenderem o desenvolvimento dos filhos e construírem estratégias de manejo no dia a dia."
+title: 'O que é orientação parental e quando ela ajuda?'
+description: 'Educar não vem com manual. A orientação parental é um espaço de apoio para pais e cuidadores entenderem o desenvolvimento dos filhos e construírem estratégias de manejo no dia a dia.'
 pubDate: 2025-03-18
-tags: ["Orientação Parental", "Pais e Cuidadores"]
-heroImage: "/fotos-web/blog-parental"
-heroImageAlt: "Mariana Gouvêa lendo um livro com um bebê no colo, sentados no chão"
+tags: ['Orientação Parental', 'Pais e Cuidadores']
+heroImage: '/fotos-web/blog-parental'
+heroImageAlt: 'Mariana Gouvêa lendo um livro com um bebê no colo, sentados no chão'
 ---
 
 Se você já se sentiu perdido sobre como reagir a uma birra, a um choro inconsolável ou ao silêncio de um adolescente, saiba que não está sozinho. **Educar não vem com manual** — e a orientação parental existe justamente para apoiar quem está nessa jornada.

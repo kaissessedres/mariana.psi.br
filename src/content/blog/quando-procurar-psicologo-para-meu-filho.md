@@ -1,13 +1,13 @@
 ---
-title: "Quando procurar um psicólogo para meu filho(a)?"
-description: "Nem sempre é fácil saber se o que o seu filho está vivendo faz parte do desenvolvimento ou se é hora de buscar ajuda. Veja sinais que merecem atenção e como funciona a conversa inicial."
+title: 'Quando procurar um psicólogo para meu filho(a)?'
+description: 'Nem sempre é fácil saber se o que o seu filho está vivendo faz parte do desenvolvimento ou se é hora de buscar ajuda. Veja sinais que merecem atenção e como funciona a conversa inicial.'
 pubDate: 2025-02-20
-tags: ["Pais e Cuidadores", "Desenvolvimento"]
-heroImage: "/fotos-web/blog-procurar"
-heroImageAlt: "Mariana Gouvêa segurando um bebê no colo ao ar livre, com duas crianças ao fundo"
+tags: ['Pais e Cuidadores', 'Desenvolvimento']
+heroImage: '/fotos-web/blog-procurar'
+heroImageAlt: 'Mariana Gouvêa segurando um bebê no colo ao ar livre, com duas crianças ao fundo'
 ---
 
-Uma das perguntas que mais escuto de pais e cuidadores é: *"Será que é só uma fase ou meu filho precisa de acompanhamento?"* É uma dúvida legítima — e fazer essa pergunta já é um gesto de cuidado.
+Uma das perguntas que mais escuto de pais e cuidadores é: _"Será que é só uma fase ou meu filho precisa de acompanhamento?"_ É uma dúvida legítima — e fazer essa pergunta já é um gesto de cuidado.
 
 Crianças e adolescentes estão em constante transformação. Oscilações de humor, birras, períodos mais retraídos ou mais agitados fazem parte do desenvolvimento. O ponto de atenção não é o comportamento isolado, mas a **persistência, a intensidade e o impacto** que ele tem na vida cotidiana.
 

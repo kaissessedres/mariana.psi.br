@@ -20,53 +20,85 @@ const { posts } = Astro.props;
 import Blob from './Blob.astro';
 
 function formatarData(date: Date) {
-  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+  return date.toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  });
 }
 ---
 
-{posts.length > 0 && (
-  <section class="secao blog-preview tem-blob" id="blog">
-    <Blob cor="var(--cor-verde-claro)" variante={2} size="300px" top="-90px" left="6%" opacity={0.2} duration="14s" />
-    <Blob cor="var(--cor-rosa)" variante={3} size="200px" top="40%" right="-70px" opacity={0.08} delay="1s" duration="12s" />
-    <div class="container">
-      <div class="blog-preview__cabecalho reveal">
-        <h2>Do blog</h2>
-        <p>Conteúdo sobre saúde mental infantojuvenil, dicas para pais e muito mais.</p>
-        <a href="/blog" class="blog-preview__ver-todos">Ver todos os artigos →</a>
-      </div>
+{
+  posts.length > 0 && (
+    <section class="secao blog-preview tem-blob" id="blog">
+      <Blob
+        cor="var(--cor-verde-claro)"
+        variante={2}
+        size="300px"
+        top="-90px"
+        left="6%"
+        opacity={0.2}
+        duration="14s"
+      />
+      <Blob
+        cor="var(--cor-rosa)"
+        variante={3}
+        size="200px"
+        top="40%"
+        right="-70px"
+        opacity={0.08}
+        delay="1s"
+        duration="12s"
+      />
+      <div class="container">
+        <div class="blog-preview__cabecalho reveal">
+          <h2>Do blog</h2>
+          <p>Conteúdo sobre saúde mental infantojuvenil, dicas para pais e muito mais.</p>
+          <a href="/blog" class="blog-preview__ver-todos">
+            Ver todos os artigos →
+          </a>
+        </div>
 
-      <ul class="blog-preview__grid reveal-group">
-        {posts.map(post => (
-          <li class="post-card">
-            <a href={`/blog/${post.slug}`} class="post-card__link" aria-label={`Ler: ${post.data.title}`}>
-              <div class="post-card__foto">
-                {post.data.heroImage && (
-                  <img
-                    src={`${post.data.heroImage}-card.webp`}
-                    alt={post.data.heroImageAlt ?? post.data.title}
-                    width={800}
-                    height={533}
-                    loading="lazy"
-                  />
-                )}
-              </div>
-              <div class="post-card__conteudo">
-                {post.data.tags && post.data.tags.length > 0 && (
-                  <span class="post-card__tag">{post.data.tags[0]}</span>
-                )}
-                <h3 class="post-card__titulo">{post.data.title}</h3>
-                <p class="post-card__descricao">{post.data.description}</p>
-                <time class="post-card__data" datetime={post.data.pubDate.toISOString()}>
-                  {formatarData(post.data.pubDate)}
-                </time>
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-)}
+        <ul class="blog-preview__grid reveal-group">
+          {posts.map((post) => (
+            <li class="post-card">
+              <a
+                href={`/blog/${post.slug}`}
+                class="post-card__link"
+                aria-label={`Ler: ${post.data.title}`}
+              >
+                <div class="post-card__foto">
+                  {post.data.heroImage && (
+                    <img
+                      src={`${post.data.heroImage}-card.webp`}
+                      alt={post.data.heroImageAlt ?? post.data.title}
+                      width={800}
+                      height={533}
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+                <div class="post-card__conteudo">
+                  {post.data.tags && post.data.tags.length > 0 && (
+                    <span class="post-card__tag">{post.data.tags[0]}</span>
+                  )}
+                  <h3 class="post-card__titulo">{post.data.title}</h3>
+                  <p class="post-card__descricao">{post.data.description}</p>
+                  <time
+                    class="post-card__data"
+                    datetime={post.data.pubDate.toISOString()}
+                  >
+                    {formatarData(post.data.pubDate)}
+                  </time>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
 
 <style>
   .blog-preview {
@@ -110,7 +142,9 @@ function formatarData(date: Date) {
     border-radius: var(--raio-lg);
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(78, 111, 76, 0.08);
-    transition: transform var(--transicao), box-shadow var(--transicao);
+    transition:
+      transform var(--transicao),
+      box-shadow var(--transicao);
   }
 
   .post-card:hover {

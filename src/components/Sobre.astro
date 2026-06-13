@@ -3,8 +3,25 @@ import Blob from './Blob.astro';
 ---
 
 <section class="secao sobre tem-blob" id="sobre">
-  <Blob cor="var(--cor-verde-claro)" variante={3} size="300px" top="15%" right="-80px" opacity={0.16} duration="16s" />
-  <Blob cor="var(--cor-rosa)" variante={1} size="220px" top="55%" left="-60px" opacity={0.1} delay="1.2s" duration="13s" />
+  <Blob
+    cor="var(--cor-verde-claro)"
+    variante={3}
+    size="300px"
+    top="15%"
+    right="-80px"
+    opacity={0.16}
+    duration="16s"
+  />
+  <Blob
+    cor="var(--cor-rosa)"
+    variante={1}
+    size="220px"
+    top="55%"
+    left="-60px"
+    opacity={0.1}
+    delay="1.2s"
+    duration="13s"
+  />
   <div class="container sobre__inner">
     <div class="sobre__foto-wrapper reveal">
       <div class="sobre__foto-blob" aria-hidden="true"></div>
@@ -24,18 +41,16 @@ import Blob from './Blob.astro';
 
       <div class="sobre__texto">
         <p>
-          Sou psicóloga formada pela Universidade Federal de Pelotas, com aperfeiçoamento em
-          Terapia Cognitivo-Comportamental e curso Introdutório do Modelo Denver de Intervenção
-          Precoce (ESDM) pela UC Davis – MIND Institute, na Califórnia, além da formação do
-          ESDM para Grupos pelo Instituto Farol.
+          Sou psicóloga formada pela Universidade Federal de Pelotas, com aperfeiçoamento
+          em Terapia Cognitivo-Comportamental e curso Introdutório do Modelo Denver de
+          Intervenção Precoce (ESDM) pela UC Davis – MIND Institute, na Califórnia, além
+          da formação do ESDM para Grupos pelo Instituto Farol.
         </p>
         <p>
           Sou coautora da coleção de livros <em>"Lili e a turminha azul"</em> sobre Habilidades
           Sociais, e pesquisadora no campo da Resiliência em crianças e adolescentes.
         </p>
-        <p>
-          Atualmente estou me especializando no Japão!
-        </p>
+        <p>Atualmente estou me especializando no Japão!</p>
       </div>
 
       <ul class="sobre__credenciais" aria-label="Formação e credenciais">
@@ -108,7 +123,11 @@ import Blob from './Blob.astro';
     position: absolute;
     inset: -20px -16px -16px -20px;
     border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
-    background: linear-gradient(135deg, var(--cor-verde-claro) 0%, rgba(193,209,138,0.35) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--cor-verde-claro) 0%,
+      rgba(193, 209, 138, 0.35) 100%
+    );
     z-index: 0;
   }
 

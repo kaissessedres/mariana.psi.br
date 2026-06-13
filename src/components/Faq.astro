@@ -2,27 +2,33 @@
 const perguntas = [
   {
     pergunta: 'Como funciona o atendimento online?',
-    resposta: 'As sessões acontecem por videochamada, em plataforma segura e de fácil acesso. O atendimento psicológico online é regulamentado pelo Conselho Federal de Psicologia e tem eficácia equivalente ao presencial para a maioria dos casos.',
+    resposta:
+      'As sessões acontecem por videochamada, em plataforma segura e de fácil acesso. O atendimento psicológico online é regulamentado pelo Conselho Federal de Psicologia e tem eficácia equivalente ao presencial para a maioria dos casos.',
   },
   {
     pergunta: 'Como sei se meu filho(a) precisa de acompanhamento?',
-    resposta: 'Mudanças persistentes de comportamento, humor, sono ou desempenho escolar podem ser sinais. A conversa inicial serve justamente para entendermos, juntos, o que faz sentido para cada caso.',
+    resposta:
+      'Mudanças persistentes de comportamento, humor, sono ou desempenho escolar podem ser sinais. A conversa inicial serve justamente para entendermos, juntos, o que faz sentido para cada caso.',
   },
   {
     pergunta: 'Os pais participam do processo?',
-    resposta: 'Sim — especialmente por meio da orientação parental. A comunicação com os responsáveis acontece de forma a preservar o vínculo e o sigilo do adolescente.',
+    resposta:
+      'Sim — especialmente por meio da orientação parental. A comunicação com os responsáveis acontece de forma a preservar o vínculo e o sigilo do adolescente.',
   },
   {
     pergunta: 'Qual a duração e a frequência das sessões?',
-    resposta: 'Em geral, as sessões são semanais, com duração e frequência ajustadas a cada caso e ao objetivo terapêutico. Esses detalhes são combinados juntos, no início do acompanhamento.',
+    resposta:
+      'Em geral, as sessões são semanais, com duração e frequência ajustadas a cada caso e ao objetivo terapêutico. Esses detalhes são combinados juntos, no início do acompanhamento.',
   },
   {
     pergunta: 'O atendimento de adolescentes é sigiloso?',
-    resposta: 'Sim. O sigilo profissional é garantido pelo Código de Ética do Psicólogo, com as exceções legais previstas (situações de risco).',
+    resposta:
+      'Sim. O sigilo profissional é garantido pelo Código de Ética do Psicólogo, com as exceções legais previstas (situações de risco).',
   },
   {
     pergunta: 'Quais são os valores e formas de pagamento?',
-    resposta: 'Entre em contato pelo WhatsApp para conversarmos sobre valores e disponibilidade de horários.',
+    resposta:
+      'Entre em contato pelo WhatsApp para conversarmos sobre valores e disponibilidade de horários.',
   },
 ];
 
@@ -30,40 +36,74 @@ import Blob from './Blob.astro';
 ---
 
 <section class="secao faq tem-blob" id="duvidas">
-  <Blob cor="var(--cor-verde-claro)" variante={1} size="320px" top="-90px" right="-50px" opacity={0.26} duration="13s" />
-  <Blob cor="var(--cor-verde-claro)" variante={3} size="240px" top="45%" left="-90px" opacity={0.14} delay="1.5s" duration="15s" />
+  <Blob
+    cor="var(--cor-verde-claro)"
+    variante={1}
+    size="320px"
+    top="-90px"
+    right="-50px"
+    opacity={0.26}
+    duration="13s"
+  />
+  <Blob
+    cor="var(--cor-verde-claro)"
+    variante={3}
+    size="240px"
+    top="45%"
+    left="-90px"
+    opacity={0.14}
+    delay="1.5s"
+    duration="15s"
+  />
   <div class="container">
     <div class="faq__cabecalho reveal">
       <h2>Dúvidas frequentes</h2>
-      <p>Ainda na dúvida? Veja as perguntas mais comuns — e se não encontrar a resposta, me chame no WhatsApp.</p>
+      <p>
+        Ainda na dúvida? Veja as perguntas mais comuns — e se não encontrar a resposta, me
+        chame no WhatsApp.
+      </p>
     </div>
 
     <dl class="faq__lista reveal-group">
-      {perguntas.map((item, i) => (
-        <div class="faq__item">
-          <dt>
-            <button
-              class="faq__pergunta"
-              id={`faq-btn-${i}`}
-              aria-expanded="false"
-              aria-controls={`faq-resp-${i}`}
+      {
+        perguntas.map((item, i) => (
+          <div class="faq__item">
+            <dt>
+              <button
+                class="faq__pergunta"
+                id={`faq-btn-${i}`}
+                aria-expanded="false"
+                aria-controls={`faq-resp-${i}`}
+              >
+                <span>{item.pergunta}</span>
+                <svg
+                  class="faq__seta"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+            </dt>
+            <dd
+              class="faq__resposta"
+              id={`faq-resp-${i}`}
+              aria-labelledby={`faq-btn-${i}`}
+              hidden
             >
-              <span>{item.pergunta}</span>
-              <svg class="faq__seta" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </button>
-          </dt>
-          <dd
-            class="faq__resposta"
-            id={`faq-resp-${i}`}
-            aria-labelledby={`faq-btn-${i}`}
-            hidden
-          >
-            <p>{item.resposta}</p>
-          </dd>
-        </div>
-      ))}
+              <p>{item.resposta}</p>
+            </dd>
+          </div>
+        ))
+      }
     </dl>
   </div>
 </section>
@@ -129,7 +169,7 @@ import Blob from './Blob.astro';
     color: var(--cor-verde-escuro);
   }
 
-  .faq__pergunta[aria-expanded="true"] .faq__seta {
+  .faq__pergunta[aria-expanded='true'] .faq__seta {
     transform: rotate(180deg);
   }
 
@@ -148,14 +188,14 @@ import Blob from './Blob.astro';
 </style>
 
 <script>
-  document.querySelectorAll<HTMLButtonElement>('.faq__pergunta').forEach(btn => {
+  document.querySelectorAll<HTMLButtonElement>('.faq__pergunta').forEach((btn) => {
     btn.addEventListener('click', () => {
       const aberto = btn.getAttribute('aria-expanded') === 'true';
       const id = btn.getAttribute('aria-controls');
       const dd = id ? document.getElementById(id) : null;
 
       // Fechar todos
-      document.querySelectorAll<HTMLButtonElement>('.faq__pergunta').forEach(b => {
+      document.querySelectorAll<HTMLButtonElement>('.faq__pergunta').forEach((b) => {
         b.setAttribute('aria-expanded', 'false');
         const respId = b.getAttribute('aria-controls');
         const resp = respId ? document.getElementById(respId) : null;

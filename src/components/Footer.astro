@@ -1,4 +1,6 @@
 ---
+import { EMAIL, INSTAGRAM_URL, INSTAGRAM_HANDLE, linkEmail } from '../lib/contato';
+
 const anoAtual = new Date().getFullYear();
 ---
 
@@ -6,11 +8,18 @@ const anoAtual = new Date().getFullYear();
   <div class="container footer__inner">
     <div class="footer__marca">
       <a href="/" class="footer__logo" aria-label="Mariana Gouvêa Psicóloga — Início">
-        <img src="/simbolo-branco.png" alt="" class="footer__simbolo" aria-hidden="true" />
+        <img
+          src="/simbolo-branco.png"
+          alt=""
+          class="footer__simbolo"
+          aria-hidden="true"
+        />
         <span class="footer__logo-texto">Mariana Gouvêa</span>
       </a>
       <p class="footer__crp">CRP 07/41781</p>
-      <p class="footer__descricao">Psicóloga Infantojuvenil · Atendimento online em todo o Brasil.</p>
+      <p class="footer__descricao">
+        Psicóloga Infantojuvenil · Atendimento online em todo o Brasil.
+      </p>
     </div>
 
     <nav class="footer__nav" aria-label="Links do rodapé">
@@ -28,22 +37,49 @@ const anoAtual = new Date().getFullYear();
       <h3 class="footer__nav-titulo">Contato</h3>
       <ul>
         <li>
-          <a href="mailto:marianagouvea.psi@gmail.com" class="footer__link-contato">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          <a href={linkEmail()} class="footer__link-contato">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
             </svg>
-            marianagouvea.psi@gmail.com
+            {EMAIL}
           </a>
         </li>
         <li>
-          <a href="https://instagram.com/marianagouvea.psi" class="footer__link-contato" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          <a
+            href={INSTAGRAM_URL}
+            class="footer__link-contato"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
-            @marianagouvea.psi
+            {INSTAGRAM_HANDLE}
           </a>
         </li>
       </ul>
@@ -54,12 +90,27 @@ const anoAtual = new Date().getFullYear();
   <div class="footer__emergencia">
     <div class="container">
       <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:0.3rem">
-          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-          <line x1="12" y1="9" x2="12" y2="13"/>
-          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          style="display:inline;vertical-align:middle;margin-right:0.3rem"
+        >
+          <path
+            d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+          ></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
         </svg>
-        Este site não oferece atendimento de urgência ou emergência. Em caso de crise, ligue para o
+        Este site não oferece atendimento de urgência ou emergência. Em caso de crise, ligue
+        para o
         <strong>CVV — 188</strong> (24h, gratuito) ou procure o serviço de saúde mais próximo.
       </p>
     </div>

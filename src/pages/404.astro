@@ -4,18 +4,36 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Base title="Página não encontrada · Mariana Gouvêa Psicóloga" description="Esta página não existe.">
+<Base
+  title="Página não encontrada · Mariana Gouvêa Psicóloga"
+  description="Esta página não existe."
+>
   <Header />
   <main class="pagina-404">
     <div class="container pagina-404__inner">
       <div class="pagina-404__decoracao" aria-hidden="true">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="180">
-          <path d="M100,15 C145,15 180,50 185,95 C190,140 160,175 115,185 C70,195 25,165 15,120 C5,75 30,30 75,18 C83,16 91,15 100,15Z" fill="var(--cor-verde-claro)" opacity="0.5"/>
-          <text x="100" y="115" text-anchor="middle" font-size="72" font-weight="700" fill="var(--cor-verde-escuro)" opacity="0.3" font-family="Poppins, sans-serif">?</text>
+          <path
+            d="M100,15 C145,15 180,50 185,95 C190,140 160,175 115,185 C70,195 25,165 15,120 C5,75 30,30 75,18 C83,16 91,15 100,15Z"
+            fill="var(--cor-verde-claro)"
+            opacity="0.5"></path>
+          <text
+            x="100"
+            y="115"
+            text-anchor="middle"
+            font-size="72"
+            font-weight="700"
+            fill="var(--cor-verde-escuro)"
+            opacity="0.3"
+            font-family="Poppins, sans-serif">?</text
+          >
         </svg>
       </div>
       <h1 class="pagina-404__titulo">Página não encontrada</h1>
-      <p class="pagina-404__texto">Ops! Esta página não existe ou foi movida. Mas não se preocupe — o conteúdo que você procura provavelmente está no início.</p>
+      <p class="pagina-404__texto">
+        Ops! Esta página não existe ou foi movida. Mas não se preocupe — o conteúdo que
+        você procura provavelmente está no início.
+      </p>
       <div class="pagina-404__acoes">
         <a href="/" class="btn btn--whatsapp">Voltar ao início</a>
         <a href="/blog" class="btn btn--outline">Ver o blog</a>

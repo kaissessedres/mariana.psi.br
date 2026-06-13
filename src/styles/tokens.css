@@ -7,40 +7,42 @@
 :root {
   /* Cores da marca */
   --cor-verde-escuro: #4e6f4c;
-  --cor-verde-claro:  #c1d18a;
-  --cor-rosa:         #c76679;
-  --cor-laranja:      #ce8236;
+  --cor-verde-claro: #c1d18a;
+  --cor-rosa: #c76679;
+  --cor-laranja: #ce8236;
 
   /* Neutros */
-  --cor-fundo:        #fdfbf7;
-  --cor-texto:        #2e3a2d;
+  --cor-fundo: #fdfbf7;
+  --cor-texto: #2e3a2d;
 
   /* Tipografia */
-  --fonte-base:       'Poppins', sans-serif;
-  --tamanho-base:     1rem;          /* 16px */
+  --fonte-base: 'Poppins', sans-serif;
+  --tamanho-base: 1rem; /* 16px */
 
   /* Espaçamentos */
-  --espacamento-xs:   0.5rem;
-  --espacamento-sm:   1rem;
-  --espacamento-md:   2rem;
-  --espacamento-lg:   4rem;
-  --espacamento-xl:   6rem;
+  --espacamento-xs: 0.5rem;
+  --espacamento-sm: 1rem;
+  --espacamento-md: 2rem;
+  --espacamento-lg: 4rem;
+  --espacamento-xl: 6rem;
 
   /* Bordas */
-  --raio-sm:          0.5rem;
-  --raio-md:          1rem;
-  --raio-lg:          2rem;
-  --raio-full:        9999px;
+  --raio-sm: 0.5rem;
+  --raio-md: 1rem;
+  --raio-lg: 2rem;
+  --raio-full: 9999px;
 
   /* Transição */
-  --transicao:        0.2s ease;
+  --transicao: 0.2s ease;
 }
 
 /* ============================================================
    RESET & BASE
    ============================================================ */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -61,7 +63,8 @@ body {
   overflow-x: clip;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -79,7 +82,10 @@ ul {
    TIPOGRAFIA
    ============================================================ */
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--fonte-base);
   color: var(--cor-verde-escuro);
   line-height: 1.2;
@@ -148,7 +154,9 @@ p {
   font-weight: 600;
   cursor: pointer;
   border: none;
-  transition: filter var(--transicao), transform var(--transicao);
+  transition:
+    filter var(--transicao),
+    transform var(--transicao);
   white-space: nowrap;
 }
 
@@ -181,8 +189,9 @@ p {
   html.js .reveal {
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity 0.7s cubic-bezier(0.22, 0.7, 0.2, 1),
-                transform 0.7s cubic-bezier(0.22, 0.7, 0.2, 1);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 0.7, 0.2, 1),
+      transform 0.7s cubic-bezier(0.22, 0.7, 0.2, 1);
     will-change: opacity, transform;
   }
 
@@ -195,8 +204,9 @@ p {
   html.js .reveal-group > * {
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity 0.6s cubic-bezier(0.22, 0.7, 0.2, 1),
-                transform 0.6s cubic-bezier(0.22, 0.7, 0.2, 1);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 0.7, 0.2, 1),
+      transform 0.6s cubic-bezier(0.22, 0.7, 0.2, 1);
   }
 
   html.js .reveal-group.is-visible > * {
@@ -204,21 +214,39 @@ p {
     transform: none;
   }
 
-  html.js .reveal-group.is-visible > *:nth-child(2) { transition-delay: 0.09s; }
-  html.js .reveal-group.is-visible > *:nth-child(3) { transition-delay: 0.18s; }
-  html.js .reveal-group.is-visible > *:nth-child(4) { transition-delay: 0.27s; }
-  html.js .reveal-group.is-visible > *:nth-child(5) { transition-delay: 0.36s; }
-  html.js .reveal-group.is-visible > *:nth-child(6) { transition-delay: 0.45s; }
+  html.js .reveal-group.is-visible > *:nth-child(2) {
+    transition-delay: 0.09s;
+  }
+  html.js .reveal-group.is-visible > *:nth-child(3) {
+    transition-delay: 0.18s;
+  }
+  html.js .reveal-group.is-visible > *:nth-child(4) {
+    transition-delay: 0.27s;
+  }
+  html.js .reveal-group.is-visible > *:nth-child(5) {
+    transition-delay: 0.36s;
+  }
+  html.js .reveal-group.is-visible > *:nth-child(6) {
+    transition-delay: 0.45s;
+  }
 
   /* --- Entrada do Hero (no load) --- */
   html.js .hero__conteudo > * {
     opacity: 0;
     animation: heroIn 0.8s cubic-bezier(0.22, 0.7, 0.2, 1) forwards;
   }
-  html.js .hero__conteudo > *:nth-child(1) { animation-delay: 0.05s; }
-  html.js .hero__conteudo > *:nth-child(2) { animation-delay: 0.15s; }
-  html.js .hero__conteudo > *:nth-child(3) { animation-delay: 0.25s; }
-  html.js .hero__conteudo > *:nth-child(4) { animation-delay: 0.35s; }
+  html.js .hero__conteudo > *:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  html.js .hero__conteudo > *:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  html.js .hero__conteudo > *:nth-child(3) {
+    animation-delay: 0.25s;
+  }
+  html.js .hero__conteudo > *:nth-child(4) {
+    animation-delay: 0.35s;
+  }
 
   html.js .hero__visual {
     opacity: 0;
@@ -226,28 +254,56 @@ p {
   }
 
   @keyframes heroIn {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: none; }
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   @keyframes heroFotoIn {
-    from { opacity: 0; transform: scale(0.92) translateY(16px); }
-    to   { opacity: 1; transform: none; }
+    from {
+      opacity: 0;
+      transform: scale(0.92) translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   /* --- Blobs flutuando suavemente --- */
-  .hero__blob { animation: float 9s ease-in-out infinite; }
-  .hero__blob--2 { animation: float 11s ease-in-out infinite reverse; }
-  .hero__foto-blob { animation: floatScale 8s ease-in-out infinite; }
+  .hero__blob {
+    animation: float 9s ease-in-out infinite;
+  }
+  .hero__blob--2 {
+    animation: float 11s ease-in-out infinite reverse;
+  }
+  .hero__foto-blob {
+    animation: floatScale 8s ease-in-out infinite;
+  }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-16px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-16px);
+    }
   }
 
   @keyframes floatScale {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50%      { transform: scale(1.03) rotate(1.5deg); }
+    0%,
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.03) rotate(1.5deg);
+    }
   }
 
   /* --- Botão WhatsApp flutuante: anel pulsante --- */
@@ -261,16 +317,19 @@ p {
 
   @keyframes pulseRing {
     0% {
-      box-shadow: 0 4px 20px rgba(199, 102, 121, 0.45),
-                  0 0 0 0 rgba(199, 102, 121, 0.5);
+      box-shadow:
+        0 4px 20px rgba(199, 102, 121, 0.45),
+        0 0 0 0 rgba(199, 102, 121, 0.5);
     }
     70% {
-      box-shadow: 0 4px 20px rgba(199, 102, 121, 0.45),
-                  0 0 0 18px rgba(199, 102, 121, 0);
+      box-shadow:
+        0 4px 20px rgba(199, 102, 121, 0.45),
+        0 0 0 18px rgba(199, 102, 121, 0);
     }
     100% {
-      box-shadow: 0 4px 20px rgba(199, 102, 121, 0.45),
-                  0 0 0 0 rgba(199, 102, 121, 0);
+      box-shadow:
+        0 4px 20px rgba(199, 102, 121, 0.45),
+        0 0 0 0 rgba(199, 102, 121, 0);
     }
   }
 }
