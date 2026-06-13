@@ -1,6 +1,6 @@
 ---
 interface Post {
-  slug: string;
+  id: string;
   data: {
     title: string;
     description: string;
@@ -63,7 +63,7 @@ function formatarData(date: Date) {
           {posts.map((post) => (
             <li class="post-card">
               <a
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.id}`}
                 class="post-card__link"
                 aria-label={`Ler: ${post.data.title}`}
               >

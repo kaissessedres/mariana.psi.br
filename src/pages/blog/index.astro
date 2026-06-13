@@ -47,7 +47,7 @@ function formatarData(date: Date) {
           <ul class="blog-pagina__lista">
             {posts.map((post) => (
               <li class="post-item">
-                <a href={`/blog/${post.slug}`} class="post-item__link">
+                <a href={`/blog/${post.id}`} class="post-item__link">
                   {post.data.heroImage && (
                     <div class="post-item__foto">
                       <img
